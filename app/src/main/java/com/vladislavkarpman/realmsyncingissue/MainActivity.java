@@ -98,6 +98,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Realm.init(this);
 
         SyncCredentials syncCredentials = SyncCredentials.usernamePassword(USER_NAME, USER_PASSWORD);
         SyncUser.loginAsync(syncCredentials, SYNC_URL_AUTH, new SyncUser.Callback() {
